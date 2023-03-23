@@ -27,7 +27,7 @@ def register_all_handlers(dispatcher: Dispatcher) -> None:
     from bot.handlers import admin, common
     logging.info("Registering handlers")
 
-    admin.register_commands(dispatcher, dispatcher.bot.config.bot.admin_id)
+    admin.register_commands(dispatcher)
     common.register_commands(dispatcher)
 
 

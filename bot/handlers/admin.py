@@ -21,5 +21,6 @@ async def cmd_report(message: types.Message):
     await message.answer(text)
 
 
-def register_commands(dp: Dispatcher, admin_id: int):
+def register_commands(dp: Dispatcher):
+    admin_id = dp.bot.config.bot.admin_id
     dp.register_message_handler(cmd_report, lambda m: m.from_user.id == admin_id, commands='report')
